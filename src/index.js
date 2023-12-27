@@ -1,25 +1,25 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Survey from './pages/Survey'
-import Results from './pages/Results'
-import Freelances from './pages/Freelances'
-import Header from './components/Header'
-import Error from './components/Error'
+import React from 'react';
+import ReactDOM from 'react-dom/client'; // Updated import for React 18
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Apropos from './pages/Apropos';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Error from './components/Error';
 
-ReactDOM.render(
+// Create a root instance using createRoot()
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/survey/:questionNumber" element={<Survey />} />
-        <Route path="/results" element={<Results />} />
-        <Route path="/freelances" element={<Freelances />} />
+        <Route path="/a-propos" element={<Apropos />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+  </React.StrictMode>
+);
