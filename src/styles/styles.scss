@@ -1,0 +1,20 @@
+$bg-primary: white;
+$bg-secondary: #f6f6f6;
+$primary-color: #ff6060;
+$secondary-color: white;
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

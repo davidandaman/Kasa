@@ -1,0 +1,70 @@
+@import "styles.scss";
+
+.topheader {
+  background-color: $bg-primary;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+
+  nav {
+    a {
+      color: $primary-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//Responsive
+@media (min-width: 1240px) {
+  .header {
+    width: 1240px;
+    height: 166px;
+
+    img {
+      width: 210px;
+    }
+
+    nav {
+      a {
+        font-size: 24px;
+        padding-left: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1239px) {
+  .header {
+    max-width: 1239px;
+    height: 94px;
+    padding: 0px 20px 0px 20px;
+
+    img {
+      height: 45px;
+    }
+
+    nav {
+      a {
+        font-size: 12px;
+        padding-left: 26px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  .header {
+    img {
+      height: 35px;
+    }
+  }
+}
