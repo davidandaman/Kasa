@@ -1,25 +1,25 @@
-import PropTypes from 'prop-types'
-import DefaultPicture from '../../assets/images/chat.jpg'
-
+import PropTypes from "prop-types";
+import DefaultPicture from "../../assets/images/accommodation-20-1.jpg";
 
 function Card({ label, title, picture }) {
-    return (
-        <div style={{ display: 'flex', flexDirection: 'column', padding: 15 }}>
-            <img src={picture} alt="Super location" height={80} width={80} />
-            <span>{title}</span>
-        </div>
-    )
+  return (
+    <div className="show-card">
+      <img src={picture} alt={title} />
+      <div className="mini-title">
+        <p>{title}</p>
+      </div>
+    </div>
+  );
 }
- 
+
 Card.propTypes = {
-    title: PropTypes.string.isRequired,
-    picture: PropTypes.string.isRequired,
-}
+  title: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+};
 
 Card.defaultProps = {
-    title: '',
-    picture: DefaultPicture,
-  }
+  title: "",
+  picture: DefaultPicture,
+};
 
-
-export default Card
+export default Card;
