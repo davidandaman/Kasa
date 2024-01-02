@@ -1,35 +1,44 @@
-import Card from "../Card";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const freelanceProfiles = [
-  {
-    title: "Appartement cosy",
-    picture: "../../assets/images/chat.jpg",
-  },
-  {
-    title: "Magnifique appartement proche Canal Saint Martin",
-  },
-  {
-    title: "Studio de charme - Buttes Chaumont",
-  },
-  {
-    title: "Appartement de Standing - 10e",
-  },
-  {
-    title: "Studio d'artiste",
-  },
-  {
-    title: "Superbe appartement proche Tour Eiffel",
-  },
-];
+const Cards = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-function Cards() {
-  return (
-    <div className="show-cards">
-      {freelanceProfiles.map((profile, index) => (
-        <Card key={`${profile.title}-${index}`} title={profile.title} />
-      ))}
-    </div>
-  );
-}
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("./datas/kasaData.json");
+      const data = response.data;
+      setData(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const renderCards = () => {
+    return loading ? (
+      <p>Loading...</p>
+    ) : data.locationsList ? (
+      data.locationsList.map((apartment) => (
+        <div key={apartment.id}>
+          <img src={apartment.cover} alt={apartment.title} />
+          <div className="title">
+            <p>{apartment.title}</p>
+          </div>
+        </div>
+      ))
+    ) : (
+      <p>Pas de données disponibles</p>
+    );
+  };
+
+  return <div className="show-cards">{renderCards()}</div>;
+};
 
 export default Cards;
