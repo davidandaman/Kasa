@@ -6,82 +6,193 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 223px;
   width: 100%;
   overflow: hidden;
-  border-radius: 25px;
   margin-bottom: 40px;
   background-color: black;
 
   img {
     position: absolute;
-    top: -300px;
     left: 0;
     width: 100%;
     height: auto;
-    opacity: 0.75;
+    opacity: 0.7;
   }
+
   h1 {
     position: absolute;
-    text-align: center;
     color: #fff;
-    font-size: 48px;
     font-weight: 500;
+  }
+}
+
+// Responsive
+@media (min-width: 1024px) {
+  .banner {
+    height: 223px;
+    border-radius: 25px;
+
+    img {
+      top: -300px;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .banner {
+    height: 140px;
+    border-radius: 10px;
+
+    img {
+      top: -180px;
+    }
+
+    h1 {
+      font-size: 30px;
+      text-align: left;
+      padding-left: 20px;
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media (max-width: 559px) {
+  .banner {
+    height: 111px;
+    border-radius: 10px;
+
+    img {
+      top: -40px;
+    }
+
+    h1 {
+      font-size: 24px;
+      text-align: left;
+      padding-left: 20px;
+
+      span {
+        display: inline-block;
+      }
+    }
   }
 }
 
 /* Affichage des locations sur la home page */
 .show-cards {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 340px 340px;
-  gap: 60px;
   background-color: $bg-secondary;
-  padding: 50px;
   border-radius: 25px;
 }
 
 .show-card {
   position: relative;
-  width: 340px;
-  height: 340px;
-}
-
-.show-card img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  background: rgb(255, 96, 96);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 96, 96, 1) 0%,
-    rgba(212, 73, 73, 1) 65%,
-    rgba(143, 68, 68, 1) 100%
-  );
+
+  img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgb(255, 96, 96);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 96, 96, 1) 0%,
+      rgba(212, 73, 73, 1) 65%,
+      rgba(143, 68, 68, 1) 100%
+    );
+  }
+
+  .title {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+
+    p {
+      margin: 5px 10px 10px 10px;
+      color: rgb(255, 255, 255);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }
 
-.show-card .mini-title {
-  display: block;
-  position: absolute;
-  z-index: 2;
-  height: 50px;
-  width: 100%;
+//Responsive
+@media (min-width: 1240px) {
+  .show-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 340px 340px;
+    gap: 60px;
+    padding: 50px;
+  }
 
-  font-size: 18px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-  bottom: 0;
+  .title {
+    height: 50px;
 
-  p {
-    margin: 5px 10px 10px 10px;
-    color: rgb(255, 255, 255);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 14em;
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1239px) {
+  .show-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 260px 260px;
+    gap: 50px;
+    padding: 50px;
+  }
+  .title {
+    height: 40px;
+
+    p {
+      font-size: 17px;
+    }
+  }
+}
+
+@media (min-width: 560px) and (max-width: 899px) {
+  .show-cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 200px;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .title {
+    height: 35px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 559px) {
+  .show-cards {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px;
+    padding: 30px;
+    .show-card {
+      flex-grow: 1;
+      height: 220px;
+    }
   }
 }

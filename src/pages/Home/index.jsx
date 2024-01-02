@@ -7,7 +7,10 @@ function Home() {
       <div>
         <div className="banner">
           <img src={HomeBanner} alt="Kasa" />
-          <h1>Chez vous, partout et ailleurs</h1>
+          <h1>
+            <span>Chez vous, </span>
+            <span>partout et ailleurs</span>
+          </h1>
         </div>
         <Cards />
       </div>
