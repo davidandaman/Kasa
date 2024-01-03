@@ -43,6 +43,13 @@
   }
 }
 
+@media (min-width: 1025px) and (max-width: 1239px) {
+  .container-banner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 @media (min-width: 560px) and (max-width: 1024px) {
   .container-banner {
     padding-left: 20px;
@@ -237,5 +244,54 @@
     flex-grow: 1;
     height: 100%;
     margin-bottom: 0;
+  }
+}
+
+/////* A mettre dans new  css : about.scss - a créer  *//////
+
+.aboutus-specificities {
+  display: flex;
+  flex-direction: column;
+  width: 1023px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutus-specificity {
+  display: block;
+  height: auto;
+  margin-bottom: 25px;
+
+  .about-title {
+    display: block;
+    height: 50px;
+    background-color: $primary-color;
+    border-radius: 5px;
+
+    h2 {
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 0px;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  .about-describe {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+
+    p {
+      background-color: rgb(251, 239, 239);
+      color: $primary-color;
+      padding: 20px;
+      margin-top: 0;
+      font-size: 18px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
   }
 }

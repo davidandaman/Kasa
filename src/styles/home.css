@@ -44,6 +44,12 @@ h2 {
     text-align: center;
   }
 }
+@media (min-width: 1025px) and (max-width: 1239px) {
+  .container-banner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 @media (min-width: 560px) and (max-width: 1024px) {
   .container-banner {
     padding-left: 20px;
@@ -206,6 +212,48 @@ h2 {
     height: 100%;
     margin-bottom: 0;
   }
+}
+.aboutus-specificities {
+  display: flex;
+  flex-direction: column;
+  width: 1023px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutus-specificity {
+  display: block;
+  height: auto;
+  margin-bottom: 25px;
+}
+.aboutus-specificity .about-title {
+  display: block;
+  height: 50px;
+  background-color: #ff6060;
+  border-radius: 5px;
+}
+.aboutus-specificity .about-title h2 {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.aboutus-specificity .about-describe {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+.aboutus-specificity .about-describe p {
+  background-color: rgb(251, 239, 239);
+  color: #ff6060;
+  padding: 20px;
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /*# sourceMappingURL=home.css.map */
