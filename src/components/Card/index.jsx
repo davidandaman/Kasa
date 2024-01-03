@@ -1,10 +1,14 @@
+import React from "react";
 import PropTypes from "prop-types";
-import DefaultPicture from "../../assets/images/accommodation-20-1.jpg";
+import DefaultPicture from "./DefaultPicture";
+import "./Card.scss";
 
-function Card({ label, title, picture }) {
+function Card({ title, picture }) {
+  const isPictureValid = picture && picture.trim() !== "";
+
   return (
-    <div className="show-card">
-      <img src={picture} alt={title} />
+    <div className={`show-card ${isPictureValid ? "" : "no-image"}`}>
+      {isPictureValid && <img src={picture} alt={title} />}
       <div className="title">
         <p>{title}</p>
       </div>

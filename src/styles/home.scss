@@ -1,6 +1,6 @@
 @import "styles.scss";
 
-/* Bannière Home Page */
+/////* Bannière Home Page *//////
 .banner {
   display: flex;
   align-items: center;
@@ -26,8 +26,8 @@
   }
 }
 
-// Responsive
-@media (min-width: 1024px) {
+////// Responsive
+@media (min-width: 1025px) {
   .banner {
     height: 223px;
     border-radius: 25px;
@@ -43,7 +43,12 @@
   }
 }
 
-@media (min-width: 560px) and (max-width: 1023px) {
+@media (min-width: 560px) and (max-width: 1024px) {
+  .container-banner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .banner {
     height: 140px;
     border-radius: 10px;
@@ -65,9 +70,15 @@
 }
 
 @media (max-width: 559px) {
+  .container-banner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .banner {
     height: 111px;
     border-radius: 10px;
+    margin-bottom: 0px;
 
     img {
       top: -40px;
@@ -85,29 +96,28 @@
   }
 }
 
-/* Affichage des locations sur la home page */
+//////* Affichage des locations sur la home page *//////
 .show-cards {
   display: grid;
   background-color: $bg-secondary;
   border-radius: 25px;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 30px;
-  padding: 30px;
+  grid-auto-rows: 340px;
 }
 
 .show-card {
   position: relative;
   width: 100%;
-  height: 340px; /* Hauteur fixe pour chaque carte dans la résolution 1240px et plus */
-  min-height: 340px; /* Hauteur minimale pour s'assurer que la hauteur reste à 340px */
-  box-sizing: border-box; /* Ajuster la boîte pour inclure le padding et la bordure dans la hauteur spécifiée */
+  height: 100%;
 
   img {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
+
     background: rgb(255, 96, 96);
     background: linear-gradient(
       180deg,
@@ -117,14 +127,19 @@
     );
   }
 
+  &.no-image {
+    display: none;
+  }
+
   .title {
+    display: block;
     position: absolute;
     z-index: 2;
     width: 100%;
-    bottom: 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: rgba(0, 0, 0, 0.3);
+    bottom: 0;
 
     p {
       margin: 5px 10px 10px 10px;
@@ -136,9 +151,91 @@
   }
 }
 
-// Responsive
+////// Responsive
+@media (min-width: 1240px) {
+  .show-cards {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 50px;
+    padding: 50px;
+  }
+
+  .title {
+    height: 50px;
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .show-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px;
+    grid-auto-rows: 260px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .title {
+    height: 40px;
+
+    p {
+      font-size: 17px;
+    }
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1023px) {
+  .show-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 30px;
+    grid-auto-rows: 230px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .title {
+    height: 40px;
+
+    p {
+      font-size: 17px;
+    }
+  }
+}
+
+@media (min-width: 560px) and (max-width: 899px) {
+  .show-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 30px;
+    grid-auto-rows: 230px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .title {
+    height: 35px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
 @media (max-width: 559px) {
+  .show-cards {
+    background-color: transparent;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+    grid-auto-rows: 255px;
+    overflow: hidden;
+  }
+
   .show-card {
-    height: auto;
+    flex-grow: 1;
+    height: 100%;
+    margin-bottom: 0;
   }
 }

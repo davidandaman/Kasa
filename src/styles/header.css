@@ -21,6 +21,7 @@ h2 {
 }
 .header nav a {
   color: #ff6060;
+  text-decoration: none;
 }
 .header nav a:hover {
   text-decoration: underline;

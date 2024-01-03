@@ -5,12 +5,14 @@ function Home() {
   return (
     <section className="main">
       <div>
-        <div className="banner">
-          <img src={HomeBanner} alt="Kasa" />
-          <h1>
-            <span>Chez vous, </span>
-            <span>partout et ailleurs</span>
-          </h1>
+        <div className="container-banner">
+          <div className="banner">
+            <img src={HomeBanner} alt="Kasa" />
+            <h1>
+              <span>Chez vous, </span>
+              <span>partout et ailleurs</span>
+            </h1>
+          </div>
         </div>
         <Cards />
       </div>

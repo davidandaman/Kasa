@@ -1,4 +1,5 @@
 //sass --watch about.scss:about.css error.scss:error.css fiche.scss:fiche.css footer.scss:footer.css header.scss:header.css home.scss:home.css layout.scss:layout.css styles.scss:styles.css
+@import "styles.scss";
 
 @import "about.css";
 @import "error.css";
@@ -6,7 +7,6 @@
 @import "footer.css";
 @import "header.css";
 @import "home.css";
-@import "styles.css";
 
 html,
 body {
@@ -22,7 +22,7 @@ body {
   margin-right: auto;
 }
 
-//Responsive
+////// Responsive
 @media (min-width: 1240px) {
   .main {
     width: 1240px;
@@ -32,8 +32,19 @@ body {
 
 @media (max-width: 1239px) {
   .main {
-    max-width: 1239px;
-    min-height: 400px;
-    padding: 0px 20px 0px 20px;
+  }
+}
+
+////// Error 404
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+
+  h1 {
+    color: $primary-color;
   }
 }
