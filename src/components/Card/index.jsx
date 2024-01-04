@@ -1,29 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
-import DefaultPicture from "./DefaultPicture";
-import "./Card.scss";
+import { useLocation } from "react-router-dom";
 
-function Card({ title, picture }) {
-  const isPictureValid = picture && picture.trim() !== "";
+const Card = () => {
+  const location = useLocation();
+  const { cardData } = location.state || {};
 
   return (
-    <div className={`show-card ${isPictureValid ? "" : "no-image"}`}>
-      {isPictureValid && <img src={picture} alt={title} />}
-      <div className="title">
-        <p>{title}</p>
-      </div>
+    <div>
+      {cardData ? (
+        <div>
+          <h1>{cardData.title}</h1>
+          <h2>{cardData.location}</h2>
+          <img src={cardData.cover} alt={cardData.title} />
+        </div>
+      ) : (
+        <p>Chargement...</p>
+      )}
     </div>
   );
-}
-
-Card.propTypes = {
-  title: PropTypes.string.isRequired,
-  picture: PropTypes.string.isRequired,
-};
-
-Card.defaultProps = {
-  title: "",
-  picture: DefaultPicture,
 };
 
 export default Card;

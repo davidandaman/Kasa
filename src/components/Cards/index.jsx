@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Card from "../Card";
 
 const Cards = () => {
   const [data, setData] = useState([]);
@@ -26,19 +28,32 @@ const Cards = () => {
       <p>Téléchargement...</p>
     ) : data.locationsList ? (
       data.locationsList.map((apartment) => (
-        <div className="show-card" key={apartment.id}>
-          <img src={apartment.cover} alt={apartment.title} />
-          <div className="title">
-            <p>{apartment.title}</p>
+        <Link
+          to={`/card/${apartment.id}`}
+          state={{ cardData: apartment }}
+          key={apartment.id}
+        >
+          {" "}
+          <div className="show-card">
+            <img src={apartment.cover} alt={apartment.title} />
+            <div className="title">
+              <p>{apartment.title}</p>
+            </div>
           </div>
-        </div>
+        </Link>
       ))
     ) : (
       <p>Pas de données disponibles</p>
     );
   };
 
-  return <div className="show-cards">{renderCards()}</div>;
+  return (
+    <div>
+      <div className="show-cards">{renderCards()}</div>
+      {/* Ajoutez Card avec les données transmises */}
+      <Card data={data} />
+    </div>
+  );
 };
 
 export default Cards;
