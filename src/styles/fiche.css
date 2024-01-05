@@ -11,7 +11,6 @@ h2 {
 .display-card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(248, 248, 231);
 }
 
 .banner-location {
@@ -27,14 +26,86 @@ h2 {
 .container-fiche {
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
 }
 
 .fiche-sup {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: blueviolet;
+  margin-top: 30px;
+}
+.fiche-sup h1 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #ff6060;
+  padding-bottom: 10px;
+}
+.fiche-sup h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ff6060;
+}
+.fiche-sup .tags {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.fiche-sup .tags ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.fiche-sup .tags li {
+  background-color: #ff6060;
+  color: white;
+  border-radius: 10px;
+  margin-right: 20px;
+  padding: 5px 20px 5px 20px;
+}
+
+.fiche-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.name-picture {
+  width: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.name-picture p {
+  white-space: pre-line;
+  word-wrap: break-word;
+  text-align: right;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #ff6060;
+  padding-right: 10px;
+}
+.name-picture img {
+  width: 64px;
+  border-radius: 50%;
+}
+
+.star {
+  font-size: 16px;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.active-star {
+  color: #ff6060;
+}
+
+.inactive-star {
+  color: #e3e3e3;
 }
 
 .fiche-inf {

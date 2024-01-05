@@ -12,9 +12,9 @@ const Cards = () => {
       const response = await axios.get("./kasaData.json");
       console.log(response.data);
       setData(response.data);
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
       setLoading(false);
     }
   };
@@ -24,9 +24,7 @@ const Cards = () => {
   }, []);
 
   const renderCards = () => {
-    return loading ? (
-      <p>Téléchargement...</p>
-    ) : data.locationsList ? (
+    return data.locationsList ? (
       data.locationsList.map((apartment) => (
         <Link
           to={`/card/${apartment.id}`}
@@ -49,9 +47,14 @@ const Cards = () => {
 
   return (
     <div>
-      <div className="show-cards">{renderCards()}</div>
-      {/* Ajoutez Card avec les données transmises */}
-      <Card data={data} />
+      {loading ? (
+        <p>Téléchargement...</p>
+      ) : (
+        <>
+          <div className="show-cards">{renderCards()}</div>
+          <Card data={data} />
+        </>
+      )}
     </div>
   );
 };

@@ -1,56 +1,82 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Card = () => {
   const location = useLocation();
   const { cardData } = location.state || {};
 
+  if (!cardData) {
+    return null;
+  }
+
+  const renderStars = () => {
+    const maxRating = 5;
+    const stars = [];
+
+    for (let i = 0; i < maxRating; i++) {
+      const starClass = i < cardData.rating ? "active-star" : "inactive-star";
+
+      stars.push(
+        <span key={i} className={`star ${starClass}`}>
+          <FontAwesomeIcon icon={faStar} />
+        </span>
+      );
+    }
+
+    return stars;
+  };
+
   return (
     <section className="main">
-      {cardData ? (
-        <div className="display-card">
-          <div className="banner-location">
-            {cardData.pictures.map((picture, index) => (
-              <img key={index} src={picture} alt="" />
-            ))}
-          </div>
+      <div className="display-card">
+        <div className="banner-location">
+          {cardData.pictures.map((picture, index) => (
+            <img key={index} src={picture} alt="" />
+          ))}
+        </div>
 
-          <div className="container-fiche">
-            <div className="fiche-sup">
-              <div className="fiche-left">
-                <h1>{cardData.title}</h1>
-                <h2>{cardData.location}</h2>
-                <div>{cardData.tags}</div>
-              </div>
+        <div className="container-fiche">
+          <div className="fiche-sup">
+            <div className="fiche-left">
+              <h1>{cardData.title}</h1>
+              <h2>{cardData.location}</h2>
 
-              <div className="fich-right">
-                <div className="name-picture">
-                  <div>{cardData.host.name}</div>
-                  <img src={cardData.host.picture} alt={cardData.host.name} />
-                </div>
-
-                <div className="rate-stars">
-                  <div>{cardData.rating}</div>
-                </div>
+              <div className="tags">
+                <ul>
+                  {cardData.tags.map((tag, index) => (
+                    <li key={index}>{tag}</li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            <div className="fiche-inf">
-              <div className="container-title">
-                <h3>Description</h3>
-                <p>{cardData.description}</p>
+            <div className="fiche-right">
+              <div className="name-picture">
+                <p>{cardData.host.name}</p>
+                <div className="profile-picture">
+                  <img src={cardData.host.picture} alt={cardData.host.name} />
+                </div>
               </div>
 
-              <div className="container-title">
-                <h3>Description</h3>
-                <p>{cardData.equipments}</p>
-              </div>
+              <div className="rate-stars">{renderStars()}</div>
+            </div>
+          </div>
+
+          <div className="fiche-inf">
+            <div className="container-title">
+              <h3>Description</h3>
+              <p>{cardData.description}</p>
+            </div>
+
+            <div className="container-title">
+              <h3>Equipements</h3>
+              <p>{cardData.equipments}</p>
             </div>
           </div>
         </div>
-      ) : (
-        <p>Chargement...</p>
-      )}
+      </div>
     </section>
   );
 };
