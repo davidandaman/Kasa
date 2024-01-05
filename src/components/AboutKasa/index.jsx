@@ -25,12 +25,12 @@ const AboutKasa = () => {
     return loading ? (
       <p>Téléchargement...</p>
     ) : data.aboutText ? (
-      data.aboutText.map((infokasa) => (
-        <div className="aboutus-specificity" key={infokasa.id}>
+      data.aboutText.map((infokasa, index) => (
+        <div className="aboutus-specificity" key={`specificity-${index}`}>
           <div className="about-title">
-            <h2>{infokasa.title}</h2>
+            <h2 key={`title-${index}`}>{infokasa.title}</h2>
           </div>
-          <div className="about-describe">
+          <div className="about-describe" key={`describe-${index}`}>
             <p>{infokasa.describe}</p>
           </div>
         </div>
