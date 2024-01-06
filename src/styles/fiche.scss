@@ -23,19 +23,14 @@
 
 .fiche-sup {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 30px;
 
   h1 {
-    font-size: 36px;
     font-weight: 500;
     color: $primary-color;
     padding-bottom: 10px;
   }
 
   h2 {
-    font-size: 18px;
     font-weight: 500;
     color: $primary-color;
   }
@@ -43,22 +38,22 @@
   .tags {
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
 
     ul {
       display: flex;
       flex-direction: row;
+      align-items: center;
       list-style-type: none;
       margin: 0;
       padding: 0;
     }
 
     li {
-      background-color: $primary-color;
-      color: white;
       border-radius: 10px;
       margin-right: 20px;
-      padding: 5px 20px 5px 20px;
+      background-color: $primary-color;
+      color: white;
+      text-align: center;
     }
   }
 }
@@ -108,6 +103,108 @@
   color: #e3e3e3;
 }
 
+////// Responsive
+@media (min-width: 560px) {
+  .fiche-sup {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    .tags {
+      margin-top: 30px;
+
+      li {
+        border-radius: 10px;
+        margin-right: 20px;
+        padding: 5px 20px 5px 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 559px) {
+  .display-card {
+    padding: 0px 20px 0px 20px;
+  }
+
+  .banner-location {
+    img {
+      height: 255px;
+      border-radius: 10px;
+    }
+  }
+
+  .fiche-sup {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 30px;
+
+    h1 {
+      font-size: 18px;
+      font-weight: 500;
+      color: $primary-color;
+      padding-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 500;
+      color: $primary-color;
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+
+      li {
+        border-radius: 5px;
+        margin-right: 15px;
+        padding: 5px 20px 5px 20px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .fiche-right {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .name-picture {
+      width: 100px;
+      order: 2;
+
+      p {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      img {
+        width: 36px;
+      }
+    }
+
+    .star {
+      font-size: 13px;
+      margin-right: 5px;
+    }
+  }
+}
+
+// partie inferieure
+// partie inferieure
+// partie inferieure
 // partie inferieure
 
 .fiche-inf {
@@ -116,7 +213,7 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
   .specificities {
     display: block;
@@ -128,25 +225,79 @@
     display: block;
     background-color: $primary-color;
     border-radius: 5px;
+  }
+
+  h2 {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  p {
+    background-color: $light-grey;
+    color: $primary-color;
+    padding: 20px;
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .equipements {
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      margin: 0;
+      padding: 20px;
+      background-color: $light-grey;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    li {
+      color: $primary-color;
+      padding: 0px 0px 5px 5px;
+    }
+  }
+}
+
+////// Responsive
+@media (max-width: 559px) {
+  .fiche-inf {
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    .specificities {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .container-title {
+      display: block;
+    }
 
     h2 {
-      padding: 10px;
+      padding: 5px;
       padding-left: 20px;
       padding-right: 20px;
-      margin: 0px;
-      color: #fff;
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 13px;
     }
 
     p {
-      background-color: rgb(251, 239, 239);
-      color: $primary-color;
-      padding: 20px;
-      margin-top: 0;
-      font-size: 18px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      padding: 15px;
+      font-size: 12px;
+    }
+
+    .equipements {
+      ul {
+        padding: 15px;
+        font-size: 12px;
+      }
     }
   }
 }

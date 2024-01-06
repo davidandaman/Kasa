@@ -75,7 +75,14 @@ const Card = () => {
             <div className="specificities">
               <div className="container-title">
                 <h2>Equipements</h2>
-                <p>{cardData.equipments}aaa</p>
+
+                <div className="equipements">
+                  <ul>
+                    {cardData.equipments.map((equipments, index) => (
+                      <li key={index}>{equipments}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
