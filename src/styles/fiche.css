@@ -112,7 +112,37 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(175, 114, 233);
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+.fiche-inf .specificities {
+  display: block;
+  width: 582px;
+  margin-bottom: 25px;
+}
+.fiche-inf .container-title {
+  display: block;
+  background-color: #ff6060;
+  border-radius: 5px;
+}
+.fiche-inf .container-title h2 {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.fiche-inf .container-title p {
+  background-color: rgb(251, 239, 239);
+  color: #ff6060;
+  padding: 20px;
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /*# sourceMappingURL=fiche.css.map */

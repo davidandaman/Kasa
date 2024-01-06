@@ -108,9 +108,45 @@
   color: #e3e3e3;
 }
 
+// partie inferieure
+
 .fiche-inf {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(175, 114, 233);
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 40px;
+
+  .specificities {
+    display: block;
+    width: 582px;
+    margin-bottom: 25px;
+  }
+
+  .container-title {
+    display: block;
+    background-color: $primary-color;
+    border-radius: 5px;
+
+    h2 {
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 0px;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    p {
+      background-color: rgb(251, 239, 239);
+      color: $primary-color;
+      padding: 20px;
+      margin-top: 0;
+      font-size: 18px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
 }

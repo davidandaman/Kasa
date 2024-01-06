@@ -65,14 +65,18 @@ const Card = () => {
           </div>
 
           <div className="fiche-inf">
-            <div className="container-title">
-              <h3>Description</h3>
-              <p>{cardData.description}</p>
+            <div className="specificities">
+              <div className="container-title">
+                <h2>Description</h2>
+                <p>{cardData.description}</p>
+              </div>
             </div>
 
-            <div className="container-title">
-              <h3>Equipements</h3>
-              <p>{cardData.equipments}</p>
+            <div className="specificities">
+              <div className="container-title">
+                <h2>Equipements</h2>
+                <p>{cardData.equipments}aaa</p>
+              </div>
             </div>
           </div>
         </div>

@@ -30,7 +30,6 @@ body {
 @media (min-width: 1240px) {
   .main {
     width: 1240px;
-    min-height: 840px;
   }
 }
 .error-page {
