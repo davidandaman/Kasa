@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import Card from "../Card";
+import { fetchData } from "../DatasApi/api";
 
 const Cards = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get("./kasaData.json");
-      console.log(response.data);
-      setData(response.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    fetchData();
+    const fetchDataAndSetState = async () => {
+      try {
+        const jsonData = await fetchData();
+        setData(jsonData);
+      } catch (error) {
+        // Gérer les erreurs si nécessaire
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDataAndSetState();
   }, []);
 
   const renderCards = () => {

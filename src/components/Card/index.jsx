@@ -1,14 +1,43 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { fetchData } from "../DatasApi/api";
 
 const Card = () => {
   const location = useLocation();
   const { cardData } = location.state || {};
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCardData = async () => {
+      try {
+        if (!cardData) {
+          const jsonData = await fetchData();
+          const idFromUrl = window.location.pathname.split("/").pop();
+          location.state = {
+            cardData: jsonData.locationsList.find(
+              (loc) => loc.id === idFromUrl
+            ),
+          };
+        }
+
+        setLoading(false);
+      } catch (error) {
+        // Handle errors if necessary
+        setLoading(false);
+      }
+    };
+
+    fetchCardData();
+  }, [cardData, location.state]);
+
+  if (loading) {
+    return <p>Chargement...</p>;
+  }
 
   if (!cardData) {
-    return null;
+    return <p>Logement introuvable</p>;
   }
 
   const renderStars = () => {
@@ -75,7 +104,6 @@ const Card = () => {
             <div className="specificities">
               <div className="container-title">
                 <h2>Equipements</h2>
-
                 <div className="equipements">
                   <ul>
                     {cardData.equipments.map((equipments, index) => (
