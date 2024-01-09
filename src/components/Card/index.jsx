@@ -37,7 +37,7 @@ const Card = () => {
   }
 
   if (!cardData) {
-    return <p>Logement introuvable</p>;
+    return null;
   }
 
   const renderStars = () => {
