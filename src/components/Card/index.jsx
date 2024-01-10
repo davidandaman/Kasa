@@ -4,34 +4,52 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { fetchData } from "../DatasApi/api";
 import Accordion from "../Accordion/Accordion";
+import Caroussel from "../Slideshow";
+import { useNavigate } from "react-router-dom";
 
 const Card = () => {
+  const navigate = useNavigate();
   const location = useLocation();
-  const { cardData } = location.state || {};
   const [loading, setLoading] = useState(true);
+  const [cardData, setCardData] = useState(null);
 
   useEffect(() => {
     const fetchCardData = async () => {
       try {
-        if (!cardData) {
-          const jsonData = await fetchData();
-          const idFromUrl = window.location.pathname.split("/").pop();
-          location.state = {
-            cardData: jsonData.locationsList.find(
-              (loc) => loc.id === idFromUrl
-            ),
-          };
+        const jsonData = await fetchData();
+        const idFromUrl = window.location.pathname.split("/").pop();
+
+        // Utiliser useLocation pour obtenir des informations sur l'emplacement actuel
+        // et vérifier si nous sommes sur la route principale
+        const isMainRoute = location.pathname === "/";
+
+        // Si idFromUrl est null ou s'il s'agit de la route principale, ne pas rediriger
+        if (!idFromUrl || (idFromUrl === "" && isMainRoute)) {
+          setLoading(false);
+          return;
         }
 
+        const foundCard = jsonData.locationsList.find(
+          (loc) => loc.id === idFromUrl
+        );
+
+        if (!foundCard) {
+          // Rediriger vers la page d'erreur si la carte n'est pas trouvée
+          setLoading(false);
+          navigate("/error");
+          return;
+        }
+
+        setCardData(foundCard);
         setLoading(false);
       } catch (error) {
-        // Handle errors if necessary
+        // Gérer les erreurs si nécessaire
         setLoading(false);
       }
     };
 
     fetchCardData();
-  }, [cardData, location.state]);
+  }, [navigate, location]);
 
   if (loading) {
     return <p>Chargement...</p>;
@@ -62,9 +80,7 @@ const Card = () => {
     <section className="main">
       <div className="display-card">
         <div className="banner-location">
-          {cardData.pictures.map((picture, index) => (
-            <img key={index} src={picture} alt="" />
-          ))}
+          <Caroussel pictures={cardData.pictures} />
         </div>
 
         <div className="container-fiche">
