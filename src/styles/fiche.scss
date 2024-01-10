@@ -213,56 +213,12 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 25px;
-  margin-bottom: 50px;
+  min-height: 200px;
 
   .specificities {
     display: block;
     width: 582px;
     margin-bottom: 25px;
-  }
-
-  .container-title {
-    display: block;
-    background-color: $primary-color;
-    border-radius: 5px;
-  }
-
-  h2 {
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 500;
-  }
-
-  p {
-    background-color: $light-grey;
-    color: $primary-color;
-    padding: 20px;
-    margin-top: 0;
-    font-size: 18px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-
-  .equipements {
-    ul {
-      display: flex;
-      flex-direction: column;
-      list-style-type: none;
-      margin: 0;
-      padding: 20px;
-      background-color: $light-grey;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
-
-    li {
-      color: $primary-color;
-      padding: 0px 0px 5px 5px;
-    }
   }
 }
 
@@ -275,29 +231,6 @@
     .specificities {
       width: 100%;
       margin-bottom: 15px;
-    }
-
-    .container-title {
-      display: block;
-    }
-
-    h2 {
-      padding: 5px;
-      padding-left: 20px;
-      padding-right: 20px;
-      font-size: 13px;
-    }
-
-    p {
-      padding: 15px;
-      font-size: 12px;
-    }
-
-    .equipements {
-      ul {
-        padding: 15px;
-        font-size: 12px;
-      }
     }
   }
 }

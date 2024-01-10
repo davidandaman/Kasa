@@ -3,6 +3,7 @@
 @import "footer.css";
 @import "header.css";
 @import "home.css";
+@import "accordion.css";
 * {
   font-family: "Montserrat", sans-serif;
 }

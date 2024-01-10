@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { fetchData } from "../DatasApi/api";
+import Accordion from "../Accordion/Accordion";
 
 const Card = () => {
   const location = useLocation();
@@ -95,22 +96,24 @@ const Card = () => {
 
           <div className="fiche-inf">
             <div className="specificities">
-              <div className="container-title">
-                <h2>Description</h2>
-                <p>{cardData.description}</p>
-              </div>
+              <Accordion
+                title="Description"
+                description={cardData.description}
+              />
             </div>
 
             <div className="specificities">
               <div className="container-title">
-                <h2>Equipements</h2>
-                <div className="equipements">
-                  <ul>
-                    {cardData.equipments.map((equipments, index) => (
-                      <li key={index}>{equipments}</li>
-                    ))}
-                  </ul>
-                </div>
+                <Accordion
+                  title="Équipements"
+                  description={
+                    <ul>
+                      {cardData.equipments.map((equipments, index) => (
+                        <li key={index}>{equipments}</li>
+                      ))}
+                    </ul>
+                  }
+                />
               </div>
             </div>
           </div>

@@ -188,49 +188,12 @@ h2 {
   justify-content: space-between;
   width: 100%;
   margin-top: 25px;
-  margin-bottom: 50px;
+  min-height: 200px;
 }
 .fiche-inf .specificities {
   display: block;
   width: 582px;
   margin-bottom: 25px;
-}
-.fiche-inf .container-title {
-  display: block;
-  background-color: #ff6060;
-  border-radius: 5px;
-}
-.fiche-inf h2 {
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0px;
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
-}
-.fiche-inf p {
-  background-color: rgb(243, 243, 243);
-  color: #ff6060;
-  padding: 20px;
-  margin-top: 0;
-  font-size: 18px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.fiche-inf .equipements ul {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  margin: 0;
-  padding: 20px;
-  background-color: rgb(243, 243, 243);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.fiche-inf .equipements li {
-  color: #ff6060;
-  padding: 0px 0px 5px 5px;
 }
 
 @media (max-width: 559px) {
@@ -241,23 +204,6 @@ h2 {
   .fiche-inf .specificities {
     width: 100%;
     margin-bottom: 15px;
-  }
-  .fiche-inf .container-title {
-    display: block;
-  }
-  .fiche-inf h2 {
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 13px;
-  }
-  .fiche-inf p {
-    padding: 15px;
-    font-size: 12px;
-  }
-  .fiche-inf .equipements ul {
-    padding: 15px;
-    font-size: 12px;
   }
 }
 

@@ -40,13 +40,6 @@ h2 {
   display: block;
   padding: 0px;
   margin: 0px;
-}
-.aboutus-specificity .about-describe p {
-  background-color: rgb(243, 243, 243);
-  color: #ff6060;
-  padding: 20px;
-  margin-top: 0;
-  font-size: 18px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
