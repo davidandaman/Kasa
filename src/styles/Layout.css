@@ -4,6 +4,7 @@
 @import "header.css";
 @import "home.css";
 @import "accordion.css";
+@import "slideshow.css";
 * {
   font-family: "Montserrat", sans-serif;
 }

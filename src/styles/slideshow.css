@@ -1,0 +1,148 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.caroussel-container {
+  position: relative;
+}
+.caroussel-container .react-slideshow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.caroussel-container .react-slideshow-container .nav {
+  z-index: 10;
+  position: absolute;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .caroussel-container .react-slideshow-container .nav:first-of-type {
+    left: 15px;
+  }
+  .caroussel-container .react-slideshow-container .nav:last-of-type {
+    right: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .caroussel-container .react-slideshow-container .nav:first-of-type {
+    left: 10px;
+  }
+  .caroussel-container .react-slideshow-container .nav:last-of-type {
+    right: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .caroussel-container .react-slideshow-container .nav:first-of-type {
+    left: 5px;
+  }
+  .caroussel-container .react-slideshow-container .nav:last-of-type {
+    right: 5px;
+  }
+}
+.caroussel-container .react-slideshow-container .default-nav {
+  height: 50px;
+  width: 50px;
+  border: 0;
+  text-align: center;
+  color: #fff !important;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.caroussel-container .react-slideshow-container .default-nav:hover, .caroussel-container .react-slideshow-container .default-nav:focus {
+  background: transparent;
+  color: #ffffff !important;
+  outline: 0;
+}
+.caroussel-container .react-slideshow-container .default-nav.disabled:hover {
+  cursor: not-allowed;
+}
+.caroussel-container .react-slideshow-container .default-nav:first-of-type {
+  left: 10px;
+}
+.caroussel-container .react-slideshow-container .default-nav:last-of-type {
+  right: 10px;
+}
+.caroussel-container .react-slideshow-fadezoom-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.caroussel-container .react-slideshow-fadezoom-wrapper .react-slideshow-fadezoom-images-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.caroussel-container .react-slideshow-fadezoom-wrapper .react-slideshow-fadezoom-images-wrap > div {
+  position: relative;
+  opacity: 0;
+}
+.caroussel-container .react-slideshow-wrapper.slide {
+  width: 100%;
+  overflow: hidden;
+}
+.caroussel-container .react-slideshow-wrapper .images-wrap.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+.caroussel-container .react-slideshow-wrapper .images-wrap.horizontal > div[aria-hidden=true] {
+  display: none;
+}
+.caroussel-container .each-slide-effect {
+  overflow: hidden;
+  position: relative;
+}
+.caroussel-container .each-slide-effect div {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 25px;
+  position: relative;
+}
+.caroussel-container .each-slide-effect div .slide-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  position: relative;
+  transition: border-radius 0.5s ease;
+}
+.caroussel-container .slide-number {
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  transition: opacity 0.5s ease;
+}
+
+@media (min-width: 1024px) {
+  .each-slide-effect {
+    height: 415px !important;
+    border-radius: 25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .each-slide-effect {
+    height: 375px !important;
+    border-radius: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .each-slide-effect {
+    height: 255px !important;
+    border-radius: 10px;
+  }
+}
+
+/*# sourceMappingURL=slideshow.css.map */

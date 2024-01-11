@@ -1,4 +1,4 @@
-//sass --watch about.scss:about.css fiche.scss:fiche.css footer.scss:footer.css header.scss:header.css home.scss:home.css layout.scss:layout.css styles.scss:styles.css accordion.scss:accordion.css
+//sass --watch about.scss:about.css fiche.scss:fiche.css footer.scss:footer.css header.scss:header.css home.scss:home.css layout.scss:layout.css styles.scss:styles.css accordion.scss:accordion.css slideshow.scss:slideshow.css
 @import "styles.scss";
 
 @import "about.css";
@@ -7,6 +7,7 @@
 @import "header.css";
 @import "home.css";
 @import "accordion.css";
+@import "slideshow.css";
 
 html,
 body {
