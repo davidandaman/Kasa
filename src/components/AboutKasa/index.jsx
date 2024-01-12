@@ -41,7 +41,6 @@ const AboutKasa = () => {
       ) : (
         <p>Pas de données disponibles</p>
       )}
-      <Caroussel />
     </div>
   );
 };

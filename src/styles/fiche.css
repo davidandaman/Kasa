@@ -67,7 +67,7 @@ h2 {
 }
 
 .name-picture {
-  width: 160px;
+  width: 140px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -85,7 +85,6 @@ h2 {
   padding-right: 10px;
 }
 .name-picture img {
-  width: 64px;
   border-radius: 50%;
 }
 
@@ -103,11 +102,12 @@ h2 {
   color: #e3e3e3;
 }
 
-@media (min-width: 560px) {
+@media (min-width: 768px) {
   .fiche-sup {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
   }
   .fiche-sup h1 {
     font-size: 36px;
@@ -124,6 +124,64 @@ h2 {
     padding: 5px 20px 5px 20px;
     font-size: 14px;
   }
+  .name-picture img {
+    width: 64px;
+  }
+}
+@media (min-width: 560px) and (max-width: 767px) {
+  .fiche-sup {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .fiche-sup h1 {
+    font-size: 24px;
+  }
+  .fiche-sup h2 {
+    font-size: 18px;
+  }
+  .fiche-sup .tags {
+    margin-top: 30px;
+  }
+  .fiche-sup .tags li {
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 5px 20px 5px 20px;
+    font-size: 14px;
+  }
+  .fiche-sup .name-picture {
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .fiche-sup .name-picture p {
+    white-space: pre-line;
+    word-wrap: break-word;
+    text-align: right;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #ff6060;
+    padding-right: 10px;
+  }
+  .fiche-sup .name-picture img {
+    width: 48px;
+  }
+  .fiche-sup .star {
+    font-size: 11px;
+    margin-right: 4px;
+    display: inline-block;
+  }
+  .fiche-sup .active-star {
+    color: #ff6060;
+  }
+  .fiche-sup .inactive-star {
+    color: #e3e3e3;
+  }
 }
 @media (max-width: 559px) {
   .display-card {
@@ -136,28 +194,21 @@ h2 {
   .fiche-sup {
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 30px;
+    margin-top: 15px;
   }
   .fiche-sup h1 {
     font-size: 18px;
-    font-weight: 500;
-    color: #ff6060;
-    padding-bottom: 10px;
   }
   .fiche-sup h2 {
     font-size: 14px;
-    font-weight: 500;
-    color: #ff6060;
   }
   .fiche-sup .tags {
-    display: flex;
-    flex-direction: row;
     margin-top: 15px;
   }
   .fiche-sup .tags li {
     border-radius: 5px;
     margin-right: 15px;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 10px 5px 10px;
     font-size: 10px;
   }
   .fiche-right {
@@ -182,24 +233,28 @@ h2 {
     margin-right: 5px;
   }
 }
-.fiche-inf {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 25px;
-  min-height: 200px;
+@media (min-width: 560px) {
+  .fiche-inf {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+    min-height: 200px;
+    gap: 10px;
+  }
+  .fiche-inf .specificities {
+    display: block;
+    width: 250px;
+    width: 100%;
+    margin-bottom: 25px;
+  }
 }
-.fiche-inf .specificities {
-  display: block;
-  width: 582px;
-  margin-bottom: 25px;
-}
-
 @media (max-width: 559px) {
   .fiche-inf {
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    min-height: 50px;
   }
   .fiche-inf .specificities {
     width: 100%;

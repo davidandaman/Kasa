@@ -34,6 +34,11 @@ body {
     width: 1240px;
   }
 }
+@media (max-width: 1239px) {
+  .main {
+    padding: 20px;
+  }
+}
 .error-page {
   display: flex;
   flex-direction: column;

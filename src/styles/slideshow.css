@@ -118,7 +118,6 @@ h2 {
 .caroussel-container .slide-number {
   display: block;
   position: absolute;
-  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   color: rgb(255, 255, 255);
@@ -131,17 +130,33 @@ h2 {
     height: 415px !important;
     border-radius: 25px;
   }
+  .slide-number {
+    bottom: 30px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .each-slide-effect {
     height: 375px !important;
     border-radius: 15px;
   }
+  .slide-number {
+    bottom: 30px;
+  }
 }
 @media (max-width: 767px) {
   .each-slide-effect {
     height: 255px !important;
     border-radius: 10px;
+  }
+  .slide-number {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    transition: opacity 0.5s ease;
   }
 }
 

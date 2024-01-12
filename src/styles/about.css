@@ -11,7 +11,7 @@ h2 {
 .aboutus-specificities {
   display: flex;
   flex-direction: column;
-  width: 1023px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -42,6 +42,12 @@ h2 {
   margin: 0px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+@media (max-width: 560px) {
+  .aboutus-specificities {
+    margin-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=about.css.map */

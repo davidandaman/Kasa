@@ -20,27 +20,24 @@
   align-items: center;
   padding: 7px 15px;
   border-radius: 5px;
-}
-.accordion-visible span {
-  padding: 10px 0;
-  font-size: 24px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-}
-.accordion-visible img {
-  width: 20px;
-  transform: rotate(180deg);
-  transition: transform 0.2s ease-in-out;
-}
 
-.accordion-visible img.active {
-  transform: rotate(0deg);
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-}
+  span {
+    padding: 10px 0;
+    font-size: 24px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  img {
+    width: 20px;
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out;
+  }
 
-.accordion-visible h2 {
-  font-size: 20px;
+  img.active {
+    transform: rotate(0deg);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
 }
 
 .accordion-toggle {
@@ -79,7 +76,7 @@
 .accordion-toggle p {
   margin: 0;
   line-height: 1.3;
-  padding: 20px; /* Ajout du padding ici */
+  padding: 20px;
 }
 
 .chevron-icon {
@@ -90,4 +87,109 @@
 
 .chevron-icon.active {
   transform: rotate(-180deg);
+}
+
+////// Responsive
+////// Responsive
+////// Responsive
+@media (min-width: 560px) and (max-width: 767px) {
+  .accordion {
+    max-width: 100%;
+    margin: 0px 0px 10px 0px;
+    border-radius: 3px;
+    background: $light-grey;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .accordion-visible {
+    background: $primary-color;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 5px;
+
+    span {
+      padding: 10px 0;
+      font-size: 16px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+    img {
+      width: 20px;
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    img.active {
+      transform: rotate(0deg);
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+
+  .accordion-toggle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .chevron-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 559px) {
+  .accordion {
+    max-width: 100%;
+    margin: 0px 0px 10px 0px;
+    border-radius: 3px;
+    background: $light-grey;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .accordion-visible {
+    background: $primary-color;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 5px;
+
+    span {
+      padding: 10px 0;
+      font-size: 13px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+    img {
+      width: 20px;
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    img.active {
+      transform: rotate(0deg);
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+
+  .accordion-toggle {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .chevron-icon {
+    font-size: 18px;
+  }
 }

@@ -45,15 +45,11 @@
 
 @media (min-width: 1025px) and (max-width: 1239px) {
   .container-banner {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }
 
 @media (min-width: 560px) and (max-width: 1024px) {
   .container-banner {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .banner {
@@ -78,8 +74,6 @@
 
 @media (max-width: 559px) {
   .container-banner {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .banner {
@@ -181,8 +175,6 @@
     gap: 40px;
     padding: 40px;
     grid-auto-rows: 260px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
   .title {
     height: 40px;
@@ -199,8 +191,6 @@
     gap: 50px;
     padding: 30px;
     grid-auto-rows: 230px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
   .title {
     height: 40px;
@@ -217,8 +207,6 @@
     gap: 40px;
     padding: 30px;
     grid-auto-rows: 230px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
   .title {
@@ -235,7 +223,7 @@
     background-color: transparent;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
-    padding: 20px;
+    padding-top: 20px;
     grid-auto-rows: 255px;
     overflow: hidden;
   }
