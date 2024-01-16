@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Accordion from "../Accordion/Accordion";
-import Caroussel from "../Slideshow";
 
 const AboutKasa = () => {
   const [data, setData] = useState([]);
