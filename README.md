@@ -6,6 +6,10 @@ Kasa
 
 28/12/2023
 
+## Auteur du projet
+
+David JULIEN
+
 ## Démarrage
 
 Taper dans le terminal la commande:
@@ -20,3 +24,7 @@ URL dans le navigateur
 ## Données
 
 Les données sont importées depuis : /public/kasaData.json
+
+## Dernière mise à jour
+
+16/01/2024
