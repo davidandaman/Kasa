@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Accordion from "../Accordion/Accordion";
 
 const AboutKasa = () => {
@@ -8,8 +7,18 @@ const AboutKasa = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("./kasaData.json");
-      setData(response.data);
+      // Utilisation de fetch au lieu d'axios
+      const response = await fetch("./kasaData.json");
+
+      if (!response.ok) {
+        // Gérer les erreurs si la requête n'est pas réussie
+        throw new Error(`Error fetching data: ${response.statusText}`);
+      }
+
+      // Utiliser la méthode json() pour extraire les données JSON de la réponse
+      const jsonData = await response.json();
+
+      setData(jsonData);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -20,7 +29,6 @@ const AboutKasa = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <div className="aboutus-specificities">
       {loading ? (
