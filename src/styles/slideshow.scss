@@ -1,4 +1,42 @@
-@import "styles.scss";
+.carousel-button {
+  height: 100px;
+  width: 100px;
+  border: 0;
+  text-align: center;
+  color: #fff !important;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  font-size: 100px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    color: #ffffff !important;
+    outline: 0;
+  }
+
+  &.prev {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.next {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.disabled:hover {
+    cursor: not-allowed;
+  }
+}
 
 .caroussel-container {
   position: relative;
@@ -142,44 +180,44 @@
     font-size: 18px;
     transition: opacity 0.5s ease;
   }
-}
 
-///// Responsive
-@media (min-width: 1024px) {
-  .each-slide-effect {
-    height: 415px !important;
-    border-radius: 25px;
-  }
-  .slide-number {
-    bottom: 30px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .each-slide-effect {
-    height: 375px !important;
-    border-radius: 15px;
+  ///// Responsive
+  @media (min-width: 1024px) {
+    .each-slide-effect {
+      height: 415px !important;
+      border-radius: 25px;
+    }
+    .slide-number {
+      bottom: 30px;
+    }
   }
 
-  .slide-number {
-    bottom: 30px;
-  }
-}
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .each-slide-effect {
+      height: 375px !important;
+      border-radius: 15px;
+    }
 
-@media (max-width: 767px) {
-  .each-slide-effect {
-    height: 255px !important;
-    border-radius: 10px;
+    .slide-number {
+      bottom: 30px;
+    }
   }
 
-  .slide-number {
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    transition: opacity 0.5s ease;
+  @media (max-width: 767px) {
+    .each-slide-effect {
+      height: 255px !important;
+      border-radius: 10px;
+    }
+
+    .slide-number {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgb(255, 255, 255);
+      font-size: 18px;
+      transition: opacity 0.5s ease;
+    }
   }
 }

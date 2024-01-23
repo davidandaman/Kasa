@@ -1,11 +1,36 @@
-* {
-  font-family: "Montserrat", sans-serif;
-}
-
-h1,
-h2 {
+.carousel-button {
+  height: 100px;
+  width: 100px;
+  border: 0;
+  text-align: center;
+  color: #fff !important;
   padding: 0;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  font-size: 100px;
+  cursor: pointer;
+}
+.carousel-button:hover, .carousel-button:focus {
+  background: transparent;
+  color: #ffffff !important;
+  outline: 0;
+}
+.carousel-button.prev {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel-button.next {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel-button.disabled:hover {
+  cursor: not-allowed;
 }
 
 .caroussel-container {
@@ -124,31 +149,30 @@ h2 {
   font-size: 18px;
   transition: opacity 0.5s ease;
 }
-
 @media (min-width: 1024px) {
-  .each-slide-effect {
+  .caroussel-container .each-slide-effect {
     height: 415px !important;
     border-radius: 25px;
   }
-  .slide-number {
+  .caroussel-container .slide-number {
     bottom: 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .each-slide-effect {
+  .caroussel-container .each-slide-effect {
     height: 375px !important;
     border-radius: 15px;
   }
-  .slide-number {
+  .caroussel-container .slide-number {
     bottom: 30px;
   }
 }
 @media (max-width: 767px) {
-  .each-slide-effect {
+  .caroussel-container .each-slide-effect {
     height: 255px !important;
     border-radius: 10px;
   }
-  .slide-number {
+  .caroussel-container .slide-number {
     display: block;
     position: absolute;
     bottom: 10px;
