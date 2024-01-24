@@ -36,6 +36,26 @@
   }
 }
 
+////// Responsive
+
+@media (max-width: 559px) {
+  .accordion {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .accordion-visible {
+    border-radius: 5px;
+
+    span {
+      font-size: 13px;
+    }
+
+    img.chevron-icon {
+      width: 22px;
+    }
+  }
+}
+
 .accordion-toggle {
   max-height: 0;
   overflow: hidden;
@@ -43,7 +63,6 @@
   transition: max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: $primary-color;
   font-size: 18px;
-
   margin-bottom: 0;
   line-height: 26px;
 
@@ -76,4 +95,21 @@
   margin: 0;
   line-height: 1.5;
   padding: 0px 20px 20px;
+}
+
+////// Responsive
+
+@media (max-width: 559px) {
+  .accordion-toggle {
+    font-size: 14px;
+    line-height: 20px;
+
+    li {
+      padding: 0px 10px 0px 20px;
+    }
+  }
+
+  .accordion-toggle p {
+    line-height: 1.4;
+  }
 }
