@@ -114,7 +114,7 @@ const Card = () => {
             <div className="specificities">
               <Accordion
                 title="Description"
-                description={cardData.description}
+                description={<p>{cardData.description}</p>}
               />
             </div>
 

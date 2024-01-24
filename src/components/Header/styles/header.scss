@@ -1,4 +1,4 @@
-@import "styles.scss";
+@import "/src/styles/styles.scss";
 
 .topheader {
   background-color: $bg-primary;
@@ -17,6 +17,10 @@
       text-decoration: none;
 
       &:hover {
+        text-decoration: underline;
+      }
+
+      &.active-link {
         text-decoration: underline;
       }
     }

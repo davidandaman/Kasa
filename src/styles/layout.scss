@@ -1,13 +1,13 @@
 //sass --watch about.scss:about.css fiche.scss:fiche.css footer.scss:footer.css header.scss:header.css home.scss:home.css layout.scss:layout.css styles.scss:styles.css accordion.scss:accordion.css slideshow.scss:slideshow.css
 @import "styles.scss";
 
-@import "about.css";
-@import "fiche.css";
-@import "footer.css";
-@import "header.css";
-@import "home.css";
-@import "accordion.css";
-@import "slideshow.css";
+@import "../components/AboutKasa/styles/about.scss";
+@import "../components/Card//styles/fiche.scss";
+@import "../components/Footer/styles/footer.scss";
+@import "../components/Header/styles/header.scss";
+@import "../pages/Home/styles/home.scss";
+@import "../components/Accordion/styles/accordion.scss";
+@import "../components/Slideshow/styles/slideshow.scss";
 
 html,
 body {

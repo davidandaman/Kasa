@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import "../../styles/accordion.css";
+import chevronUpImage from "../../assets/images/chevron-up.png";
+import "../Accordion/styles/accordion.scss";
 
 export default function Accordion({ title, description }) {
   const [toggle, setToggle] = useState(false);
@@ -12,10 +11,14 @@ export default function Accordion({ title, description }) {
 
   return (
     <div className="accordion">
-      <button onClick={toggleState} className="accordion-visible">
+      <button
+        onClick={toggleState}
+        className={`accordion-visible ${toggle ? "animated" : ""}`}
+      >
         <span>{title}</span>
-        <FontAwesomeIcon
-          icon={faChevronUp}
+        <img
+          src={chevronUpImage}
+          alt="Chevron Up"
           className={`chevron-icon ${toggle ? "active" : ""}`}
         />
       </button>

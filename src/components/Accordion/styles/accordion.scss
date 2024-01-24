@@ -1,0 +1,79 @@
+@import "/src/styles/styles.scss";
+
+.accordion {
+  max-width: 100%;
+  margin: 0px 0px 30px 0px;
+  border-radius: 3px;
+  background: $light-grey;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.accordion-visible {
+  background: $primary-color;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  padding-left: 15px;
+  border-radius: 8px;
+
+  span {
+    font-size: 24px;
+  }
+
+  img.chevron-icon {
+    width: 38px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  img.chevron-icon.active {
+    transform: rotate(-180deg);
+  }
+}
+
+.accordion-toggle {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 1;
+  transition: max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: $primary-color;
+  font-size: 18px;
+
+  margin-bottom: 0;
+  line-height: 26px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 20px;
+    background-color: $light-grey;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  li {
+    padding: 0px 10px 5px 20px;
+  }
+}
+
+.animated {
+  max-height: 1000px;
+
+  transition: max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-bottom: 20px;
+}
+
+.closing {
+  max-height: 0 !important;
+}
+
+.accordion-toggle p {
+  margin: 0;
+  line-height: 1.5;
+  padding: 0px 20px 20px;
+}
